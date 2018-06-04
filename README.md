@@ -79,13 +79,16 @@ Specify name for each area mentioned in *grid-template-areas*. For example:
 ```
 
 ##### Breakpoint
-Only use 1 breakpoint, which is 768px as specified in media queries in responsive.css.
+Only use 1 breakpoint, which is 768px as specified in media queries in responsive.css. Responsive.css is added mainly to cover responsive design style.
 
 ```
 @media (max-width: 768px) {...}
 ```
 
 ##### Responsive Images
+Using gulp automated tools to create script to resize images into 3 different size of images, which are: 375px, 480px and the original size 800px of width. The 3 different images size are choosen based on main content's max-width 960px setup. In index.html, images of restaurant list are display about more than a quarter of main content's width. Whereas in restaurant.html, restaurant's images are shown about half of main content's width. [This article](https://medium.com/hceverything/applying-srcset-choosing-the-right-sizes-for-responsive-images-at-different-breakpoints-a0433450a4a3) helps to guide choosing the sizes for responsive images. +
+
+Picture elements with srcset are added using JavaScript to feed appropriate images based on the viewport width.
 
 
 ##### Font Icons
@@ -101,15 +104,43 @@ I use Font Awesome Icons to add map marker icon before the restaurant name in re
 
 
 #### Accessibility
+Here are some changes in code to make the site more accessible to people with disabilities.
+
+_index.html_
+
+* Create skip link to skip map navigation to access main content directly.
+
+* Add `aria-label` for map and restaurant list element.
+
+* Add `aria-labelledby` for combo box to describe the number of list item.
+
+* ADd `aria-label` for View Details button.
+
+NOTE: VoiceOver utility and ChromeVox Chrome extension give different description for the ARIA attributes. `CMD+F5` to turn on VoiceOver on OS X. `CTRL+Option+U` to open Web Rotor. Open Chrome Extension to turn on ChromeVox.
+
+_restaurant.html_
+
+* Add `aria-hidden` for decorative map marker icon located by the restaurant address.
+
+* Add `aria-label` for breadcrumb and `aria-current` for the last item of breadcrumb to indiccate current page shown.
+
+_For both of site pages_
+
+* Add `role = navigation` for nav element in case the browser does not support ARIA.
+
+* Add alt for all images.
+
+Other than adding aria role, name and state, I change some non prominent color of some elements.
 
 #### Offline Ability
 
+Registered service worker and caching static files as well as images dynamically. Images will be caches based on the fetched url.
 
 ## Built With
 
 * [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - The css layout system used
-* [GraphicsMagick]()
-
+* [Gulp](https://gulpjs.com/)
+* [GraphicsMagick](http://www.graphicsmagick.org/)
 
 ## Contributing
 

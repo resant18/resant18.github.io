@@ -50,7 +50,7 @@ article, aside, canvas, details, figcaption, figure, footer, hgroup, menu, nav, 
 }
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #fff;
   font-size: 0.8em;
   letter-spacing: 1px;
   margin-top: 20px;
@@ -132,7 +132,6 @@ nav h1 a {
 }
 .filter-options h2 {
   font-size: 1rem;
-  font-weight: normal;
   font-style: italic;
   display: inline;
   padding-right: 20px;
@@ -147,6 +146,9 @@ nav h1 a {
   letter-spacing: 0;
   margin: 3px 10px 0 0;
   padding: 0 10px;  
+}
+#filter-options #total-restaurant-list {
+  padding-left: 10px;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -359,7 +361,7 @@ nav h1 a {
 /* ====================== Skip Link ====================== */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: 0;
   left: 0;
   background: #f4511e;
   color: white;
