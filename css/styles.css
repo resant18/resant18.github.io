@@ -361,15 +361,20 @@ nav h1 a {
 /* ====================== Skip Link ====================== */
 .skip-link {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -1000px;
+  left: -1000px;
   background: #f4511e;
   color: white;
   padding: 8px;
   z-index: 100;
+  overflow: hidden;
 }
-.skip-link:focus {
+.skip-link:active
+.skip-link:focus,
+.skip-link:hover {
   top: 0;
+  left: 0;
+  overflow: visible;
 }
 
 /* ====================== Reset Button ====================== */
