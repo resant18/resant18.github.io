@@ -1,8 +1,8 @@
 let staticCacheName = 'mws-static-v1';
 let contentImgsCache = 'mws-content-imgs';
 let allCaches = [
-  staticCacheName /*,
-  contentImgsCache*/
+  staticCacheName,
+  contentImgsCache
 ];
 
 //console.log('viewport:'+ vwWidth);
@@ -18,6 +18,15 @@ let staticFilesName = [
   'js/restaurant_info.js',
   'data/restaurants.json'
 ]
+
+// caching medium size images to provide image callback
+for (let i=1; i<=10; i++) {  
+  contentImgsCache.push(`${i}_medium.jpg`);
+}
+
+console.log('Image cache:');
+console.log(contentImgsCache);
+
 
 self.addEventListener('install', function(event) {
   //window.alert('install service worker');
@@ -44,6 +53,20 @@ self.addEventListener('activate', function(event) {
           return caches.delete(cacheName);
         })
       );
+    })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+  console.log(`Fetching ${event.request.url}`);
+  event.respondWith(
+    caches.open(allCaches).then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        return response || fetch(event.request).then(function(response) {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
     })
   );
 });
