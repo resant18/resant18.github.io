@@ -369,7 +369,7 @@ nav h1 a {
   z-index: 100;
   overflow: hidden;
 }
-.skip-link:active
+.skip-link:active,
 .skip-link:focus,
 .skip-link:hover {
   top: 0;
