@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 4. NPM Package
 
-5. Hebrew
+5. Homebrew
 
 6. Gulp as Automated Task Script
 
@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 3. With your server running, visit the site: `http://localhost:8000`
 
-### Project Criteria
+### Project Progress Breakdown
 
 There are three aspect are considered based on [Udacity Rubric Specification](https://review.udacity.com/#!/rubrics/1090/view)
 
@@ -150,7 +150,7 @@ Please read [CONTRIBUTING.md]() for details on our code of conduct, and the proc
 ## Authors
 
 * **Renata Santoso**
-* **Udacity** - *Initial work* - [Udacity](https://github.com/udacity/mws-restaurant-stage-1)
+* **Udacity** - *Initial work* - [**Udacity**](https://github.com/udacity/mws-restaurant-stage-1)
  
 
 
@@ -160,4 +160,4 @@ This project is licensed under the MIT License - see the [LICENSE.md]() file for
 
 ## Acknowledgments
 
-* My mentor: 
+* My mentor: chemseddine
