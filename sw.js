@@ -5,7 +5,7 @@ let allCaches = [
   contentImgsCache
 ];
 
-//console.log('viewport:'+ vwWidth);
+
 
 
 let staticFilesName = [
@@ -20,28 +20,27 @@ let staticFilesName = [
 ]
 
 // caching medium size images to provide image callback
-for (let i=1; i<=10; i++) {  
+/*for (let i=1; i<=10; i++) {  
   contentImgsCache.push(`${i}_medium.jpg`);
 }
 
 console.log('Image cache:');
 console.log(contentImgsCache);
+*/
 
-
-self.addEventListener('install', function(event) {
-  //window.alert('install service worker');
-  console.log('Install service worker and cache static assets');
+self.addEventListener('install', function(event) {  
+  //console.log('Install service worker and cache static assets');
   event.waitUntil(
     caches.open(staticCacheName)
     .then(function(cache) {
-      console.log('Caching sucess');
+      //console.log('Caching sucess');
       return cache.addAll(staticFilesName);
     })
   );
 });
 
 self.addEventListener('activate', function(event) {
-  console.log('Activating new service worker...');
+  //console.log('Activating new service worker...');
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
@@ -58,7 +57,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  console.log(`Fetching ${event.request.url}`);
+  //console.log(`Fetching ${event.request.url}`);
   event.respondWith(
     caches.open(allCaches).then(function(cache) {
       return cache.match(event.request).then(function (response) {
