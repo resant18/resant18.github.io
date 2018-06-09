@@ -3,6 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -24,14 +25,14 @@
     </section>
     <section>
       <div class="filter-options" id="filter-options">
-        <h2>Search by</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <h2 id="filter-label">Search by</h2>
+        <select id="neighborhoods-select" name="neighborhoods" aria-labelledby="filter-label" onchange="updateRestaurants()">
           <option value="all" aria-labelledby="neighborhoods-select">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" aria-labelledby="filter-label" onchange="updateRestaurants()">
           <option value="all" aria-labelledby="cuisines-select">All Cuisines</option>
         </select>
-        <button id="reset-filter" onClick=resetFilter()>Reset</button>
+        <button id="reset-filter" aria-label="Reset filter" onClick=resetFilter()>Reset</button>
         <span id="total-restaurant-list" class="bold"></span>
       </div>      
       <ul id="restaurants-list" aria-label="List of restaurants"></ul>

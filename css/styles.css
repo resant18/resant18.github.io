@@ -191,7 +191,7 @@ nav h1 a {
 #restaurants-list li a {
   background-color: orange;
   border-radius: 6px;
-  color: #fff;
+  color: #000;
   display: inline-block;
   font-size: 1.1em;
   margin: 15px 0 15px 0;

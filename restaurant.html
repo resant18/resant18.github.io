@@ -18,28 +18,29 @@
     <!-- Beginning nav -->
     <nav role="navigation">
       <h1><a href="/">Restaurant Reviews</a></h1>
-    </nav>
-    <!-- Beginning hamburger menu -->    
-    
-    <nav id="sidebarmenu" class="sidebar" role="navigation"> 
-        <a id="menuicon" href="javascript:void(0);" class="icon hidden" onclick="toggleSidebarMenu()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
-            </svg>
-          </a> 
-      <ul id="sidebarmenulist" class="hidden">        
-        <li><a href="#restaurant-info" class="bold" onclick="toggleSidebarMenu()">Restaurant Info</a></li>
-        <li><a href="#map-container" class="bold" onclick="toggleSidebarMenu()">Restaurant Location</a></li>
-        <li><a href="#restaurant-hours-wrapper" class="bold" onclick="toggleSidebarMenu()">Restaurant Hours</a></li>   
-        <li><a href="#reviews-container" class="bold" onclick="toggleSidebarMenu()">Restaurant Reviews</a></li>                           
-      </ul>
-    </nav>
-    <!-- End hamburger menu -->
+    </nav>    
     <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" aria-label="Breadcrumb">
       <li><a href="/">Home</a></li>
     </ul>
-    <!-- End breadcrumb -->    
+    <!-- End breadcrumb -->   
+    <!-- Beginning hamburger menu -->        
+    <nav id="sidebarmenu" class="sidebar" role="navigation"> 
+      <a id="toggleicon" href="javascript:void(0);" class="icon hidden" 
+          aria-label="Sidebar menu" aria-haspopup="true" aria-expanded="false" aria-controls="sidebarmenulist"
+          onclick="toggleSidebarMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+          </svg>
+        </a> 
+    <ul id="sidebarmenulist" class="hidden">        
+      <li><a href="#restaurant-info" class="bold" onclick="toggleSidebarMenu()">Restaurant Info</a></li>
+      <li><a href="#map-container" class="bold shadow" onclick="toggleSidebarMenu()">Restaurant Location</a></li>
+      <li><a href="#restaurant-hours-wrapper" class="bold shadow" onclick="toggleSidebarMenu()">Restaurant Hours</a></li>   
+      <li><a href="#reviews-container" class="bold shadow" onclick="toggleSidebarMenu()">Restaurant Reviews</a></li>                           
+    </ul>
+  </nav>
+  <!-- End hamburger menu --> 
     <!-- End nav -->
   </header>
   <!-- End header -->
@@ -92,13 +93,20 @@
     function toggleSidebarMenu() {
       const sidebarmenu = document.getElementById('sidebarmenulist');
       const sidebarclass = document.getElementById('sidebarmenulist').className;
-
+      const toggleicon = document.getElementById('toggleicon');
+      let isMenuOpen;
+      
       if (sidebarclass.includes('hidden')) {
+        console.log('remove hidden');
         sidebarmenu.classList.remove('hidden');
+        isMenuOpen = true;
       } else {
+        console.log('add hidden');
         sidebarmenu.classList.add('hidden');
-      }
-
+        isMenuOpen = false;
+      }      
+      console.log('isMenuOpen = ' + isMenuOpen);
+      toggleicon.setAttribute('aria-expanded', isMenuOpen);
     }
   </script> 
   <!-- Google Maps -->

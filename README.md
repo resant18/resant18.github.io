@@ -16,11 +16,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 4. NPM Package
 
-5. Homebrew
+5. Hebrew
 
 6. Gulp as Automated Task Script
 
+7. SASS
+
 ### Installing
+
+#### How to Install and Run Python Server
 
 1. If Python is not installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
@@ -28,7 +32,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 3. With your server running, visit the site: `http://localhost:8000`
 
-### Project Progress Breakdown
+#### How to Install SASS
+
+```
+$ sudo gem install sass
+```
+
+More information on: [How to install Sass on Mac](https://www.dyclassroom.com/howto-mac/how-to-install-sass-on-mac)
+
+### Project Criteria
 
 There are three aspect are considered based on [Udacity Rubric Specification](https://review.udacity.com/#!/rubrics/1090/view)
 
@@ -150,7 +162,7 @@ Please read [CONTRIBUTING.md]() for details on our code of conduct, and the proc
 ## Authors
 
 * **Renata Santoso**
-* **Udacity** - *Initial work* - [**Udacity**](https://github.com/udacity/mws-restaurant-stage-1)
+* **Udacity** - *Initial work* - [Udacity](https://github.com/udacity/mws-restaurant-stage-1)
  
 
 

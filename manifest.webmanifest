@@ -1,0 +1,10 @@
+{
+  "name": "Restaurant Review",
+  "description": "Udacity Grow with Google Mobile Web Specialist Scholarship Project Stage 1",
+  "theme_color": "orange",
+  "display": "browser",
+  "scope": "/",
+  "start_url": ".",
+  "dir": "ltr",
+  "lang": "es-US"
+}
