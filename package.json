@@ -8,9 +8,9 @@
     "gulp-rename": "^1.2.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-imagemin": "^4.1.0",
-    "gulp-responsive-images": "0.0.3"
+    "gulp-responsive-images": "0.0.4"
   },
   "scripts": {
     "test": "python -m SimpleHTTPServer 8000"
